@@ -1,5 +1,6 @@
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:lab8_043/pages/Profilepags.dart';
 import 'package:lab8_043/services/auth_services.dart';
 
 class Login extends StatefulWidget {
@@ -26,6 +27,12 @@ class _LoginState extends State<Login> {
               authServices.signInWithGoogle().then(
                 (value) {
                   print(value);
+
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profilepags(),
+                      ));
                 },
               );
             },
